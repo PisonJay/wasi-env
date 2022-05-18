@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SHELL_FOLDER=$(dirname $(readlink -f "$0"))
+WASI_ROOT=$SHELL_FOLDER/../wasi-sdk/wasi-sdk-11.0
+
+$WASI_ROOT/bin/clang --sysroot=$WASI_ROOT/share/wasi-sysroot $@
